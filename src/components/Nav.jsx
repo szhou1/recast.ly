@@ -1,7 +1,7 @@
 var Nav = (props) => (
   <nav className="navbar">
     <div className="col-md-6 col-md-offset-3">
-      <Search search={props.search.bind(this)}/>
+      <Search search={props.search.bind(this)} keypressEvent={props.keypressEvent.bind(this)}/>
     </div>
   </nav>
 );
