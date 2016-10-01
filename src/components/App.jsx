@@ -6,19 +6,27 @@ class App extends React.Component {
       allVideos: [],
       currentVideo: exampleVideoData[0]
     };
+    
+    this.searchOptions = {
+      q: 'reactjs',
+      maxResults: 8,
+      key: window.YOUTUBE_API_KEY,
+    };
+
+    searchYouTube(this.searchOptions, function(videos) {
+      this.setState({allVideos: videos});
+      this.setState({currentVideo: videos[0]});
+    }.bind(this));
   }
 
   onVideoEntryClick(video) {
-    console.log("onVideoEntryClick");
-    console.log(video);
-
     this.setState({
       currentVideo: video
     });
   }
 
 
-  render(props) {
+  render() {
     return (
       <div>
         <Nav />
@@ -26,7 +34,7 @@ class App extends React.Component {
           <VideoPlayer video={this.state.currentVideo}/>
         </div>
         <div className="col-md-5">
-          <VideoList onClick={this.onVideoEntryClick.bind(this)} videos={exampleVideoData}/>
+          <VideoList onVideoEntryClick={this.onVideoEntryClick.bind(this)} videos={this.state.allVideos}/>
         </div>
       </div>); 
   }

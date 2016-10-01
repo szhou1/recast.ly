@@ -1,4 +1,4 @@
-describe('VideoList', function() {
+xdescribe('VideoList', function() {
   var { createRenderer } = React.addons.TestUtils;
 
   // When testing a React component that renders other nested components,
