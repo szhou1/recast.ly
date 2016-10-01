@@ -1,5 +1,5 @@
 class App extends React.Component {
-  
+
   constructor(props) {
     super(props);
     this.state = {
@@ -8,8 +8,10 @@ class App extends React.Component {
     };
     
     this.searchOptions = {
-      q: 'reactjs',
-      maxResults: 8,
+      // for search, create a function that captures user in from search box
+      // and replaces 'dogs humans' with their search phrase
+      query: 'dogs humans',
+      max: 10,
       key: window.YOUTUBE_API_KEY,
     };
 
@@ -24,7 +26,6 @@ class App extends React.Component {
       currentVideo: video
     });
   }
-
 
   render() {
     return (

@@ -1,11 +1,5 @@
 var VideoListEntry = (props) => {
 
-  // var handleClick = function(items) {
-  //   console.log(this);
-  //   console.log(items);
-  //   console.log(props);
-  // };
-
   return (
     <div onClick={props.onVideoEntryClick.bind(this, props.video)} className="video-list-entry">
       <div className="media-left media-middle">
@@ -17,7 +11,6 @@ var VideoListEntry = (props) => {
       </div>
     </div>
   );
-
 };
 
 // PropTypes tell other developers what `props` a component expects
